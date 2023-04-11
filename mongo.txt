@@ -1,0 +1,47 @@
+db.comments.insertOne({
+    'name': 'Rishabh',
+    'lang': 'english',
+    'member_since': '5'
+});
+
+db.comments.updateOne({'name':'rishabh'},
+{$set:{
+    'name': 'Rishabh',
+    'lang': 'english',
+    'member_since': '5'
+}});
+
+db.collection1.insertMany([
+    {
+        'name': 'Harry',
+        'lang': 'Javascript',
+        'member_since': '5'
+    },
+    {
+        'name': 'Rohan',
+        'lang': 'java',
+        'member_since': '4'
+    }
+]);
+
+
+db.collection1.update({'name': 'Rohan}, {$set:
+{
+        'name': 'Harry',
+        'lang': 'Javascript',
+        'member_since': '5'
+}})
+
+
+increment operator
+db.comments.updateOne({'name':'rishabh},
+{$inc:{
+    member_since: 2
+}})
+
+
+//rename operator
+db.comments.updateOne({'name':'rishabh'},
+{$rename:{
+    'member_since': 'member'
+}})
